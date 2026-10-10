@@ -56,7 +56,7 @@
 // لا تضع Secret key أو service_role key في هذا الملف أبداً.
 const SUPABASE_URL = 'https://kjjnolesvemqwntazmqf.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_g4xAzLVrfNqpFc1ZRrIToA_5w0EnvZF';
-const configured = SUPABASE_URL.startsWith('https://') && !SUPABASE_URL.includes('PASTE_') && SUPABASE_PUBLISHABLE_KEY && !SUPABASE_PUBLISHABLE_KEY.includes('PASTE_');
+const configured = SUPABASE_URL.startsWith('https://') && !SUPABASE_URL.includes('PASTE_') && SUPABASE_PUBLISHABLE_KEY && !SUPABASE_PUBLISHABLE_KEY.includes('PASTE_');_KEY.includes('PASTE_');
 const supabase = configured ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY) : null;
 
 const $ = (id) => document.getElementById(id);
