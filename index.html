@@ -50,7 +50,8 @@
 .modal{max-height:90vh;overflow:auto}.modal label{display:block;color:var(--gold2);font-size:12px;margin:12px 0 6px}.modal input{display:block;width:100%;padding:12px;border:1px solid #49402d;border-radius:8px;background:#090909;color:var(--text);font:inherit;direction:ltr;text-align:left;outline:none}.modal input:focus{border-color:var(--gold)}.authswitch{display:flex;gap:9px;margin-top:14px}.authswitch button{flex:1}.textbutton{display:block;background:none;border:0;color:var(--gold2);text-decoration:underline;cursor:pointer;margin:13px auto 0;font:inherit;font-size:12px}.authmessage{min-height:22px;margin-bottom:0}.authmessage.error{color:#ff9e9e}.authmessage.success{color:#9be0ad}.playerbox{display:grid;gap:7px;background:#0a0a09;border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:15px}.mutedlabel{color:var(--muted);font-size:12px}.walletbalance{font-size:28px;color:var(--gold2)}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
+<script> 
+(() => {
 
 // ضع هنا Project URL وPublishable key من مشروعك في Supabase.
 // لا تضع Secret key أو service_role key في هذا الملف أبداً.
@@ -137,6 +138,6 @@ if(configured){
   supabase.auth.onAuthStateChange((_event,session)=>{refreshPlayer(session?.user||null);});
 }else{
   setStatus('● يحتاج إعداد الاتصال');
-}
+})();
 </script>
 </body></html>
