@@ -54,8 +54,8 @@
 
 // ضع هنا Project URL وPublishable key من مشروعك في Supabase.
 // لا تضع Secret key أو service_role key في هذا الملف أبداً.
-const SUPABASE_URL = 'PASTE_YOUR_PROJECT_URL_HERE';
-const SUPABASE_PUBLISHABLE_KEY = 'PASTE_YOUR_PUBLISHABLE_KEY_HERE';
+const SUPABASE_URL = 'https://kjjnolesvemqwntazmqf.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_g4xAzLVrfNqpFc1ZRrIToA_5w0EnvZF';
 const configured = SUPABASE_URL.startsWith('https://') && !SUPABASE_URL.includes('PASTE_') && SUPABASE_PUBLISHABLE_KEY && !SUPABASE_PUBLISHABLE_KEY.includes('PASTE_');
 const supabase = configured ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY) : null;
 
