@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#090909" />
+<title>Genesis RP — Genesis Coins</title>
+<style>
+:root{--bg:#080808;--panel:#111111;--panel2:#171512;--gold:#d8ad55;--gold2:#f2d68e;--text:#f7f3e9;--muted:#a7a094;--line:rgba(216,173,85,.23)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#3a2a0f 0,transparent 44%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{max-width:1120px;margin:auto;padding:0 20px}.topbar{border-bottom:1px solid var(--line);background:rgba(8,8,8,.88);position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:1.8px}.logo{width:39px;height:39px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold2);transform:rotate(45deg);font-weight:900}.logo span{transform:rotate(-45deg)}.navlinks{display:flex;gap:24px;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--gold2)}.account{border:1px solid var(--line);border-radius:9px;padding:10px 14px;font-size:13px;color:var(--gold2);background:#15120c}.hero{text-align:center;padding:65px 0 38px}.eyebrow{color:var(--gold);font-size:12px;letter-spacing:3px;font-weight:800}.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.1;margin:14px 0;background:linear-gradient(110deg,#fff3ca,#d8ad55 55%,#fff0bd);color:transparent;background-clip:text}.hero p{max-width:590px;margin:0 auto;color:var(--muted);line-height:1.9}.hero-actions{display:flex;justify-content:center;gap:12px;margin-top:25px;flex-wrap:wrap}.btn{border:1px solid var(--gold);background:linear-gradient(135deg,#e8c66f,#b98732);color:#151006;padding:12px 19px;border-radius:9px;font-weight:850;cursor:pointer}.btn.secondary{background:transparent;color:var(--gold2);border-color:var(--line)}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:28px 0 18px}.sectionhead h2{margin:0;font-size:25px}.sectionhead p{margin:5px 0 0;color:var(--muted);font-size:13px}.status{font-size:11px;color:#e6c775;border:1px solid var(--line);padding:7px 10px;border-radius:99px}.packs{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.pack{position:relative;background:linear-gradient(160deg,#1a1711,#101010 55%);border:1px solid var(--line);border-radius:15px;padding:22px 16px 17px;text-align:center;overflow:hidden;transition:.2s}.pack:hover{transform:translateY(-4px);border-color:#d8ad55;box-shadow:0 12px 35px #0008}.pack.featured{border-color:var(--gold);background:linear-gradient(160deg,#30230e,#111 65%)}.ribbon{position:absolute;top:13px;left:-29px;transform:rotate(-35deg);background:var(--gold);color:#171006;font-size:10px;font-weight:900;padding:5px 30px}.coinart{width:94px;height:94px;margin:7px auto 15px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 32% 25%,#fff1b6,#e1b84f 35%,#8c5b12 70%,#3e2807);box-shadow:inset 0 0 0 5px #9b711f,inset 0 0 0 8px #f7d77d,0 8px 24px #0008;color:#503409;font-size:29px;font-weight:1000;text-shadow:0 1px 0 #ffeab0}.pack h3{font-size:17px;margin:0 0 7px}.amount{font-size:25px;font-weight:950;color:var(--gold2);direction:ltr}.amount small{font-size:12px;color:var(--muted);font-weight:600}.bonus{min-height:21px;margin:7px 0 14px;color:#8dd6a1;font-size:12px}.price{font-size:21px;font-weight:800;margin:13px 0 15px}.price small{font-size:11px;color:var(--muted);font-weight:500}.pack .btn{width:100%;padding:11px 8px}.notice{margin:22px 0 0;border:1px solid var(--line);border-radius:12px;background:#100e0a;padding:15px 17px;display:flex;gap:12px;align-items:flex-start;color:var(--muted);font-size:12px;line-height:1.8}.notice strong{color:var(--gold2)}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:40px 0}.feature{border:1px solid #25221b;background:#0e0e0d;border-radius:12px;padding:18px}.feature .ico{font-size:22px;color:var(--gold)}.feature h3{font-size:14px;margin:9px 0 5px}.feature p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}.footer{border-top:1px solid #25221b;color:#777164;padding:24px 0 35px;font-size:12px}.footinner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.modalback{position:fixed;inset:0;background:#000b;display:none;place-items:center;padding:20px;z-index:20}.modalback.show{display:grid}.modal{max-width:430px;width:100%;background:#12110e;border:1px solid var(--gold);border-radius:16px;padding:24px;box-shadow:0 20px 90px #000}.modal h2{margin:0 0 9px;color:var(--gold2)}.modal p{color:var(--muted);font-size:13px;line-height:1.8}.modalactions{display:flex;gap:10px;margin-top:18px}.modalactions button{flex:1}.mobilemenu{display:none}@media(max-width:800px){.packs{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}.hero{padding-top:47px}.features{grid-template-columns:1fr}.sectionhead h2{font-size:22px}}@media(max-width:420px){.wrap{padding:0 13px}.nav{height:62px}.brand{font-size:13px}.account{padding:9px;font-size:12px}.packs{gap:9px}.pack{padding:18px 10px 12px}.coinart{width:74px;height:74px;font-size:24px}.amount{font-size:21px}.price{font-size:19px}.hero p{font-size:14px}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap nav"><a class="brand" href="#home"><span class="logo"><span>G</span></span><span>GENESIS <span style="color:var(--gold)">RP</span></span></a><nav class="navlinks"><a href="#shop">المتجر</a><a href="#benefits">مميزات المتجر</a><a href="#support">الدعم</a></nav><button class="account" id="accountButton">حساب اللاعب ↗</button></div></header>
+<main id="home" class="wrap"><section class="hero"><div class="eyebrow">THE OFFICIAL GENESIS RP STORE</div><h1>ارتقِ بتجربتك</h1><p>اشحن رصيدك من <strong style="color:var(--gold2)">Genesis Coins</strong> واستعد لمغامرتك القادمة في عالم Genesis RP. اختر الباقة المناسبة لك.</p><div class="hero-actions"><a class="btn" href="#shop">اكتشف الباقات ↓</a><button class="btn secondary" id="heroAccountButton">تسجيل الدخول</button></div></section>
+<section id="shop"><div class="sectionhead"><div><h2>باقات Genesis Coins</h2><p>اختر رصيدك — تسجيل الحسابات مربوط بـ Supabase</p></div><span class="status" id="connectionStatus">● غير مربوط بعد</span></div><div class="packs">
+<article class="pack"><div class="coinart">G</div><h3>Starter Pack</h3><div class="amount">1,000 <small>COINS</small></div><div class="bonus">مناسبة للانطلاقة</div><div class="price">19 <small>MAD · تجريبي</small></div><button class="btn" onclick="showPack('Starter Pack','1,000','19')">اختيار الباقة</button></article>
+<article class="pack"><div class="coinart">G</div><h3>Silver Pack</h3><div class="amount">2,800 <small>COINS</small></div><div class="bonus">+ 300 Coins إضافية</div><div class="price">49 <small>MAD · تجريبي</small></div><button class="btn" onclick="showPack('Silver Pack','2,800','49')">اختيار الباقة</button></article>
+<article class="pack featured"><div class="ribbon">POPULAR</div><div class="coinart">G</div><h3>Gold Pack</h3><div class="amount">6,500 <small>COINS</small></div><div class="bonus">+ 1,000 Coins إضافية</div><div class="price">99 <small>MAD · تجريبي</small></div><button class="btn" onclick="showPack('Gold Pack','6,500','99')">اختيار الباقة</button></article>
+<article class="pack"><div class="coinart">G</div><h3>Elite Pack</h3><div class="amount">15,000 <small>COINS</small></div><div class="bonus">+ 3,000 Coins إضافية</div><div class="price">199 <small>MAD · تجريبي</small></div><button class="btn" onclick="showPack('Elite Pack','15,000','199')">اختيار الباقة</button></article>
+</div><div class="notice"><span style="font-size:20px">ⓘ</span><div><strong>تنبيه مهم:</strong> الحسابات وتسجيل الدخول يمكن تجربتهما بعد إضافة بيانات Supabase في أسفل الملف. الأسعار تجريبية، والشراء وشحن Genesis Coins غير مفعّلين بعد. لا تدخل بيانات بطاقة بنكية في هذا النموذج.</div></div></section>
+<section id="benefits" class="features"><article class="feature"><div class="ico">✦</div><h3>تصميم فاخر</h3><p>واجهة داكنة بلمسات ذهبية، مستوحاة من متاجر ألعاب تقمص الأدوار.</p></article><article class="feature"><div class="ico">⌁</div><h3>متوافق مع الهاتف</h3><p>تخطيط مرن يعمل على شاشات iPhone وAndroid والكمبيوتر.</p></article><article class="feature"><div class="ico">♜</div><h3>حسابات آمنة</h3><p>تسجيل الدخول وإنشاء الحساب عبر Supabase Auth، مع قراءة رصيد اللاعب الخاص به فقط.</p></article></section></main>
+<footer id="support" class="footer"><div class="wrap footinner"><span>© 2026 Genesis RP. جميع الحقوق محفوظة.</span><span>المتجر التجريبي · Genesis Coins</span><span>الدعم: سيُضاف لاحقاً</span></div></footer>
+<div class="modalback" id="modalback" aria-hidden="true">
+  <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modaltitle">
+    <button id="closeModalButton" class="btn secondary" style="float:left;padding:5px 10px" type="button">✕</button>
+    <h2 id="modaltitle">حساب اللاعب</h2>
+    <p id="modaltext">أنشئ حسابك أو سجّل الدخول إلى Genesis RP.</p>
+    <div id="authForms">
+      <div id="signupFields" style="display:none;margin:12px 0">
+        <label for="usernameInput">اسم اللاعب</label>
+        <input id="usernameInput" autocomplete="nickname" maxlength="24" placeholder="اسم اللاعب (3 إلى 24 حرفاً)" />
+      </div>
+      <label for="emailInput">البريد الإلكتروني</label>
+      <input id="emailInput" type="email" autocomplete="email" placeholder="name@example.com" />
+      <label for="passwordInput">كلمة المرور</label>
+      <input id="passwordInput" type="password" autocomplete="current-password" minlength="8" placeholder="8 أحرف على الأقل" />
+      <div class="authswitch"><button id="showLoginButton" class="btn secondary" type="button">تسجيل الدخول</button><button id="showSignupButton" class="btn" type="button">إنشاء حساب</button></div>
+      <button id="submitAuthButton" class="btn" type="button" style="width:100%;margin-top:12px">إنشاء حساب</button>
+      <button id="resetPasswordButton" class="textbutton" type="button">نسيت كلمة المرور؟</button>
+    </div>
+    <div id="playerPanel" style="display:none">
+      <div class="playerbox"><span class="mutedlabel">الحساب</span><strong id="playerEmail"></strong><span class="mutedlabel">اسم اللاعب</span><strong id="playerName">—</strong><span class="mutedlabel">رصيد Genesis Coins</span><strong class="walletbalance" id="walletBalance">0</strong></div>
+      <button id="logoutButton" class="btn secondary" type="button" style="width:100%;margin-top:14px">تسجيل الخروج</button>
+    </div>
+    <p id="authMessage" role="status" aria-live="polite" class="authmessage"></p>
+  </section>
+</div>
+<style>
+.modal{max-height:90vh;overflow:auto}.modal label{display:block;color:var(--gold2);font-size:12px;margin:12px 0 6px}.modal input{display:block;width:100%;padding:12px;border:1px solid #49402d;border-radius:8px;background:#090909;color:var(--text);font:inherit;direction:ltr;text-align:left;outline:none}.modal input:focus{border-color:var(--gold)}.authswitch{display:flex;gap:9px;margin-top:14px}.authswitch button{flex:1}.textbutton{display:block;background:none;border:0;color:var(--gold2);text-decoration:underline;cursor:pointer;margin:13px auto 0;font:inherit;font-size:12px}.authmessage{min-height:22px;margin-bottom:0}.authmessage.error{color:#ff9e9e}.authmessage.success{color:#9be0ad}.playerbox{display:grid;gap:7px;background:#0a0a09;border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:15px}.mutedlabel{color:var(--muted);font-size:12px}.walletbalance{font-size:28px;color:var(--gold2)}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+
+// ضع هنا Project URL وPublishable key من مشروعك في Supabase.
+// لا تضع Secret key أو service_role key في هذا الملف أبداً.
+const SUPABASE_URL = 'PASTE_YOUR_PROJECT_URL_HERE';
+const SUPABASE_PUBLISHABLE_KEY = 'PASTE_YOUR_PUBLISHABLE_KEY_HERE';
+const configured = SUPABASE_URL.startsWith('https://') && !SUPABASE_URL.includes('PASTE_') && SUPABASE_PUBLISHABLE_KEY && !SUPABASE_PUBLISHABLE_KEY.includes('PASTE_');
+const supabase = configured ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY) : null;
+
+const $ = (id) => document.getElementById(id);
+const modal = $('modalback');
+let authMode = 'signup';
+let currentUser = null;
+
+function openModal(){ modal.classList.add('show'); modal.setAttribute('aria-hidden','false'); $('authMessage').textContent=''; $('authMessage').className='authmessage'; if(currentUser) showPlayerPanel(); else showAuthForms(authMode); }
+function closeModal(){ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); }
+function message(text, type=''){ $('authMessage').textContent=text; $('authMessage').className='authmessage '+type; }
+function showAuthForms(mode){ authMode=mode; $('authForms').style.display='block'; $('playerPanel').style.display='none'; $('signupFields').style.display=mode==='signup'?'block':'none'; $('modaltitle').textContent=mode==='signup'?'إنشاء حساب Genesis RP':'تسجيل الدخول'; $('modaltext').textContent=mode==='signup'?'أنشئ حساباً لتجربة حساب اللاعب.':'أدخل بيانات حسابك للمتابعة.'; $('submitAuthButton').textContent=mode==='signup'?'إنشاء حساب':'تسجيل الدخول'; $('showLoginButton').style.opacity=mode==='login'?'1':'.7'; $('showSignupButton').style.opacity=mode==='signup'?'1':'.7'; message(''); }
+function showPlayerPanel(){ $('authForms').style.display='none'; $('playerPanel').style.display='block'; $('modaltitle').textContent='حساب اللاعب'; $('modaltext').textContent='أنت مسجل الدخول إلى Genesis RP.'; }
+function setStatus(text){ $('connectionStatus').textContent=text; }
+function showConfigHelp(){ setStatus('● يحتاج إعداد الاتصال'); openModal(); showAuthForms('signup'); message('أولاً ضع Project URL وPublishable key داخل الملف ثم احفظه. لا تستخدم Secret key هنا.','error'); }
+async function refreshPlayer(user){
+  currentUser=user||null;
+  if(!currentUser){ $('accountButton').textContent='حساب اللاعب ↗'; setStatus(configured?'● متصل بـ Supabase':'● يحتاج إعداد الاتصال'); return; }
+  $('accountButton').textContent='حسابي ✓';
+  $('playerEmail').textContent=currentUser.email||'—';
+  $('playerName').textContent=currentUser.user_metadata?.username||'لا يوجد اسم';
+  $('walletBalance').textContent='…';
+  if(!supabase){ $('walletBalance').textContent='—'; return; }
+  const [profileResult,walletResult]=await Promise.all([
+    supabase.from('player_profiles').select('username').eq('user_id',currentUser.id).maybeSingle(),
+    supabase.from('coin_wallets').select('balance').eq('user_id',currentUser.id).maybeSingle()
+  ]);
+  if(profileResult.data?.username) $('playerName').textContent=profileResult.data.username;
+  if(walletResult.error){ $('walletBalance').textContent='غير متاح'; console.warn('Wallet read failed:',walletResult.error.message); }
+  else $('walletBalance').textContent=Number(walletResult.data?.balance||0).toLocaleString('en-US');
+  setStatus('● متصل بـ Supabase');
+}
+
+$('accountButton').addEventListener('click',()=>configured?openModal():showConfigHelp());
+$('heroAccountButton').addEventListener('click',()=>configured?openModal():showConfigHelp());
+$('closeModalButton').addEventListener('click',closeModal);
+modal.addEventListener('click',(event)=>{if(event.target===modal)closeModal();});
+document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeModal();});
+$('showLoginButton').addEventListener('click',()=>showAuthForms('login'));
+$('showSignupButton').addEventListener('click',()=>showAuthForms('signup'));
+$('submitAuthButton').addEventListener('click',async()=>{
+  if(!configured){message('أضف Project URL وPublishable key في أعلى السكربت أولاً.','error');return;}
+  const email=$('emailInput').value.trim();
+  const password=$('passwordInput').value;
+  const username=$('usernameInput').value.trim();
+  if(!email||!password){message('أدخل البريد الإلكتروني وكلمة المرور.','error');return;}
+  if(password.length<8){message('كلمة المرور يجب أن تكون 8 أحرف على الأقل.','error');return;}
+  if(authMode==='signup'&&(username.length<3||username.length>24)){message('اسم اللاعب يجب أن يكون بين 3 و24 حرفاً.','error');return;}
+  $('submitAuthButton').disabled=true; $('submitAuthButton').textContent='جارٍ المعالجة…';
+  try{
+    if(authMode==='signup'){
+      const {data,error}=await supabase.auth.signUp({email,password,options:{data:{username}}});
+      if(error) throw error;
+      if(data.session){await refreshPlayer(data.user);showPlayerPanel();message('تم إنشاء الحساب بنجاح.','success');}
+      else message('تم إرسال طلب إنشاء الحساب. افحص بريدك الإلكتروني لتأكيد الحساب، ثم سجّل الدخول.','success');
+    }else{
+      const {data,error}=await supabase.auth.signInWithPassword({email,password});
+      if(error) throw error;
+      await refreshPlayer(data.user);showPlayerPanel();message('تم تسجيل الدخول بنجاح.','success');
+    }
+  }catch(error){message(error.message||'تعذر إكمال العملية. تحقق من البيانات وإعدادات Supabase.','error');}
+  finally{$('submitAuthButton').disabled=false;$('submitAuthButton').textContent=authMode==='signup'?'إنشاء حساب':'تسجيل الدخول';}
+});
+$('resetPasswordButton').addEventListener('click',async()=>{
+  if(!configured){message('أضف بيانات Supabase أولاً.','error');return;}
+  const email=$('emailInput').value.trim();
+  if(!email){message('اكتب بريدك الإلكتروني أولاً.','error');return;}
+  try{const {error}=await supabase.auth.resetPasswordForEmail(email,{redirectTo:location.href.split('#')[0]});if(error)throw error;message('إذا كان البريد مسجلاً، فستصلك رسالة لاستعادة كلمة المرور.','success');}catch(error){message(error.message||'تعذر إرسال رسالة الاستعادة.','error');}
+});
+$('logoutButton').addEventListener('click',async()=>{if(!supabase)return;const {error}=await supabase.auth.signOut();if(error){message(error.message,'error');return;}currentUser=null;await refreshPlayer(null);closeModal();});
+window.showPack=async(name,coins,price)=>{
+  if(!configured){showConfigHelp();return;}
+  if(!currentUser){openModal();showAuthForms('login');message('سجّل الدخول أولاً. الشراء والدفع غير مفعّلين بعد.','error');return;}
+  openModal();showPlayerPanel();message('اخترت '+name+' — '+coins+' Coins بسعر تجريبي '+price+' MAD. الدفع وشحن العملات غير مفعّلين بعد.','error');
+};
+if(configured){
+  setStatus('● جارٍ الاتصال…');
+  supabase.auth.getSession().then(async({data,error})=>{if(error){setStatus('● تعذر الاتصال');console.warn(error.message);return;}await refreshPlayer(data.session?.user||null);});
+  supabase.auth.onAuthStateChange((_event,session)=>{refreshPlayer(session?.user||null);});
+}else{
+  setStatus('● يحتاج إعداد الاتصال');
+}
+</script>
+</body></html>
