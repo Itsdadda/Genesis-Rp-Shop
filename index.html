@@ -21,7 +21,7 @@
 <header class="shell top">
   <a class="brand" href="#top"><span class="brandmark">G</span><span>GENESIS RP<small>ENHANCED STORE PREVIEW</small></span></a>
   <nav class="nav"><a class="navlink" href="#store">المتجر</a><a class="navlink" href="#identity">حساب اللاعب</a><a class="navlink" href="#about">عن Genesis</a></nav>
-  <div class="actions"><span id="walletPanel" class="tag hidden">🪙 رصيدك: <b id="walletBalance">0</b> Coins</span><button id="logoutBtn" class="btn hidden" type="button">تسجيل الخروج</button><button id="cartOpen" class="btn">🛒 السلة <span id="cartCount" class="cart-count">0</span></button><button id="loginOpen" class="btn ghost">تسجيل الدخول</button><button id="signupOpen" class="btn primary">إنشاء حساب</button></div>
+  <div class="actions"><span id="playerPanel" class="tag hidden">👤 <b id="playerName">لاعب Genesis</b></span><span id="walletPanel" class="tag hidden">🪙 رصيدك: <b id="walletBalance">0</b> Coins</span><button id="logoutBtn" class="btn hidden" type="button">تسجيل الخروج</button><button id="cartOpen" class="btn">🛒 السلة <span id="cartCount" class="cart-count">0</span></button><button id="loginOpen" class="btn ghost">تسجيل الدخول</button><button id="signupOpen" class="btn primary">إنشاء حساب</button></div>
 </header>
 <main class="shell" id="top">
   <section class="hero"><div class="hero-copy"><div class="eyebrow">YOUR CITY. YOUR STORY.</div><h1>صمّم أسطورتك في<br><span>Genesis RP</span></h1><p>عالمك يبدأ من هنا. اكتشف الباقات والمزايا الحصرية، وجهّز تجربتك في Genesis City.</p><div class="hero-buttons"><button id="heroLogin" class="btn primary">✦ انطلق الآن واكتشف المتجر</button><a class="btn" href="#store">تصفّح الباقات ↓</a></div></div><div class="hero-art"><div class="orbit"></div><div class="crest"><span>G</span></div><div class="float-tag one">✦ GENESIS UNIVERSE</div><div class="float-tag two">◉ ROLEPLAY WORLD</div></div></section>
@@ -76,12 +76,21 @@
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeAuth();$('cartDrawer').classList.remove('open')}});
   async function refreshGenesisWallet(user){
     const panel=$('walletPanel');
-    if(!user){panel.classList.add('hidden');$('logoutBtn').classList.add('hidden');return;}
+    const playerPanel=$('playerPanel');
+    if(!user){
+      panel.classList.add('hidden');playerPanel.classList.add('hidden');$('logoutBtn').classList.add('hidden');
+      $('loginOpen').classList.remove('hidden');$('signupOpen').classList.remove('hidden');
+      return;
+    }
+    const nickname=user.user_metadata?.player_nickname || user.user_metadata?.username || (user.email ? user.email.split('@')[0] : 'لاعب Genesis');
+    $('playerName').textContent=nickname;
+    playerPanel.classList.remove('hidden');$('logoutBtn').classList.remove('hidden');
+    $('loginOpen').classList.add('hidden');$('signupOpen').classList.add('hidden');
     const {data,error}=await supabase.from('genesis_coin_wallets').select('balance').eq('user_id',user.id).maybeSingle();
-    if(error){console.error('Wallet loading error:',error.message);toast('تعذر تحميل الرصيد. حاول مرة أخرى.');return;}
-    if(!data){toast('لم يتم العثور على محفظة الحساب.');return;}
+    if(error){console.error('Wallet loading error:',error.message);$('walletBalance').textContent='—';panel.classList.remove('hidden');return;}
+    if(!data){console.warn('No Genesis wallet row found for user:',user.id);$('walletBalance').textContent='0';panel.classList.remove('hidden');return;}
     $('walletBalance').textContent=Number(data.balance).toLocaleString('en-US');
-    panel.classList.remove('hidden');$('logoutBtn').classList.remove('hidden');
+    panel.classList.remove('hidden');
   }
   $('logoutBtn').addEventListener('click',async()=>{const {error}=await supabase.auth.signOut();if(error){toast('تعذر تسجيل الخروج.');return;}toast('تم تسجيل الخروج');});
   supabase.auth.onAuthStateChange((event,session)=>{setTimeout(()=>{refreshGenesisWallet(session?.user??null);},0);});
