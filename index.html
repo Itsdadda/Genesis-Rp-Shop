@@ -1,4 +1,4 @@
-<!doctype html>
+!doctype html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
@@ -15,13 +15,28 @@
 /* Enhanced preview additions */
 .favorite-btn{position:absolute;top:15px;left:15px;width:34px;height:34px;border-radius:10px;border:1px solid #4b3d27;background:#10100f;color:#bdb4a4;font-size:17px;z-index:2}.favorite-btn.active{color:#f0bd64;border-color:#d8b46a;background:#2a2111}.product-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.favorite-filter{border:1px solid var(--line);background:#111;color:#d8c9a8;padding:9px 13px;border-radius:30px;font-size:11px;font-weight:800}.favorite-filter.active{background:#d8b46a;color:#171108}.enhanced-strip{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 15px;margin:14px 0;border:1px solid #d8b46a38;background:#d8b46a0a;border-radius:13px;color:#d9c796;font-size:11px;line-height:1.8}.cart-item .qty-tools{display:flex;align-items:center;gap:7px;margin-top:8px}.qty-tools button{border:1px solid #59482b;background:#1a1711;color:#f1dfb4;border-radius:7px;width:25px;height:25px}.qty-tools span{min-width:16px;text-align:center}.pack .pack-icon{flex-shrink:0}
 
+
+.admin-panel{margin:28px 0;padding:22px;border:1px solid #d8b46a88;border-radius:18px;background:linear-gradient(145deg,#19170f,#0d0d0c)}
+.admin-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.admin-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.admin-stat{padding:16px;border:1px solid var(--line);border-radius:13px;background:#0d0d0c}
+.admin-stat small{display:block;color:var(--muted);font-size:11px}
+.admin-stat strong{display:block;font-size:25px;color:var(--gold2);margin-top:8px}
+.admin-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}
+.admin-table{width:100%;border-collapse:collapse;font-size:12px;min-width:600px}
+.admin-table th,.admin-table td{padding:12px;text-align:right;border-bottom:1px solid #ffffff12}
+.admin-table th{color:var(--gold2);background:#201b10}
+.admin-status{display:inline-block;padding:4px 8px;border:1px solid var(--line);border-radius:20px;font-size:10px}
+.admin-message{font-size:12px;line-height:1.8;color:var(--muted);margin:12px 0}
+@media(max-width:600px){.admin-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
 <header class="shell top">
   <a class="brand" href="#top"><span class="brandmark">G</span><span>GENESIS RP<small>ENHANCED STORE PREVIEW</small></span></a>
   <nav class="nav"><a class="navlink" href="#store">المتجر</a><a class="navlink" href="#identity">حساب اللاعب</a><a class="navlink" href="#about">عن Genesis</a></nav>
-  <div class="actions"><span id="playerPanel" class="tag hidden">👤 <b id="playerName">لاعب Genesis</b></span><span id="walletPanel" class="tag hidden">🪙 رصيدك: <b id="walletBalance">0</b> Coins</span><button id="logoutBtn" class="btn hidden" type="button">تسجيل الخروج</button><button id="cartOpen" class="btn">🛒 السلة <span id="cartCount" class="cart-count">0</span></button><button id="loginOpen" class="btn ghost">تسجيل الدخول</button><button id="signupOpen" class="btn primary">إنشاء حساب</button></div>
+  <div class="actions"><span id="playerPanel" class="tag hidden">👤 <b id="playerName">لاعب Genesis</b></span><span id="walletPanel" class="tag hidden">🪙 رصيدك: <b id="walletBalance">0</b> Coins</span><button id="logoutBtn" class="btn hidden" type="button">تسجيل الخروج</button><button id="adminOpen" class="btn hidden" type="button">👑 لوحة الإدارة</button><button id="cartOpen" class="btn">🛒 السلة <span id="cartCount" class="cart-count">0</span></button><button id="loginOpen" class="btn ghost">تسجيل الدخول</button><button id="signupOpen" class="btn primary">إنشاء حساب</button></div>
 </header>
 <main class="shell" id="top">
   <section class="hero"><div class="hero-copy"><div class="eyebrow">YOUR CITY. YOUR STORY.</div><h1>صمّم أسطورتك في<br><span>Genesis RP</span></h1><p>عالمك يبدأ من هنا. اكتشف الباقات والمزايا الحصرية، وجهّز تجربتك في Genesis City.</p><div class="hero-buttons"><button id="heroLogin" class="btn primary">✦ انطلق الآن واكتشف المتجر</button><a class="btn" href="#store">تصفّح الباقات ↓</a></div></div><div class="hero-art"><div class="orbit"></div><div class="crest"><span>G</span></div><div class="float-tag one">✦ GENESIS UNIVERSE</div><div class="float-tag two">◉ ROLEPLAY WORLD</div></div></section>
@@ -41,6 +56,21 @@
       <article class="pack" data-category="property" data-name="منزل فاخر"><div class="pack-top"><span class="pack-icon">🏛️</span><span class="tag">REAL ESTATE</span></div><h3>منزل فاخر</h3><p>عنصر عرض تجريبي لقسم العقارات في Genesis City.</p><div class="coins"><strong>HOME</strong><span>PROPERTY</span></div><div class="price-row"><div class="price">قريباً<small>التوفر والثمن غير مؤكدين</small></div><span class="tag">LUXURY</span></div><button class="btn addCart" data-pack="منزل فاخر" data-category="property">أضف إلى السلة</button></article>
       <article class="pack" data-category="property" data-name="فيلا Genesis"><div class="pack-top"><span class="pack-icon">🏡</span><span class="tag">ELITE HOME</span></div><h3>فيلا Genesis</h3><p>تصميم تجريبي لعقار مميز ضمن مجموعة المتجر المستقبلية.</p><div class="coins"><strong>VILLA</strong><span>PROPERTY</span></div><div class="price-row"><div class="price">قريباً<small>التوفر والثمن غير مؤكدين</small></div><span class="tag">ELITE</span></div><button class="btn addCart" data-pack="فيلا Genesis" data-category="property">أضف إلى السلة</button></article>
     </div>
+  </section>
+
+  <section id="adminPanel" class="admin-panel hidden" aria-labelledby="adminTitle">
+    <div class="admin-head">
+      <div><div class="section-label">PRIVATE CONTROL CENTER</div><h2 id="adminTitle" style="margin:8px 0 0">لوحة إدارة GENESIS RP</h2><p class="admin-message">لوحة قراءة ومراقبة أولية. لا تغيّر أرصدة اللاعبين ولا تؤكد أي دفع.</p></div>
+      <button id="adminRefresh" class="btn" type="button">تحديث البيانات ↻</button>
+    </div>
+    <div class="admin-grid">
+      <div class="admin-stat"><small>عدد المحافظ</small><strong id="adminWalletCount">—</strong></div>
+      <div class="admin-stat"><small>طلبات الشحن</small><strong id="adminOrderCount">—</strong></div>
+      <div class="admin-stat"><small>عمليات العملات</small><strong id="adminTransactionCount">—</strong></div>
+    </div>
+    <h3>آخر طلبات الشحن</h3>
+    <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>رقم الطلب</th><th>معرّف اللاعب</th><th>Coins</th><th>المبلغ USD</th><th>الحالة</th></tr></thead><tbody id="adminOrdersBody"><tr><td colspan="5">سجّل الدخول بحساب إداري لعرض البيانات.</td></tr></tbody></table></div>
+    <p id="adminMessage" class="admin-message" aria-live="polite">الوصول مخصص للحسابات التي تحمل صلاحية admin في app_metadata.</p>
   </section>
   <section class="banner"><div><h3>✦ كل أسطورة كتبدأ بخطوة</h3><p>جمع المنتجات فالسلة وجرب تجربة الشراء. الدفع الفعلي وتسليم المشتريات خاصهم إعداد آمن قبل الإطلاق.</p></div><div class="banner-icon">♛</div></section>
   <p class="note">نسخة GENESIS RP STORE مرتبطة بتسجيل الحسابات ومحفظة Genesis Coins عبر Supabase. أسعار الباقات للعرض فقط، والدفع الحقيقي وشحن العملات وتسليم المنتجات غير مفعّلين بعد.</p>
@@ -63,6 +93,36 @@
   const categoryLabels = {coins:'Genesis Coins',vip:'VIP Membership',cars:'السيارات',property:'العقارات'};
   const backdrop = $('authBackdrop');
   function toast(message){const t=$('toast');t.textContent=message;t.classList.add('show');window.setTimeout(()=>t.classList.remove('show'),2200)}
+  let currentGenesisUser = null;
+  function isGenesisAdmin(user){return user?.app_metadata?.role==='admin';}
+  async function refreshAdminPanel(user=currentGenesisUser){
+    const panel=$('adminPanel'),button=$('adminOpen');
+    if(!user||!isGenesisAdmin(user)){panel.classList.add('hidden');button.classList.add('hidden');return;}
+    button.classList.remove('hidden');
+    if(panel.classList.contains('hidden')){ /* keep the panel closed until requested */ }
+    $('adminMessage').textContent='جاري تحميل بيانات الإدارة...';
+    const [wallets,orders,transactions]=await Promise.all([
+      supabase.from('genesis_coin_wallets').select('user_id',{count:'exact',head:true}),
+      supabase.from('genesis_coin_orders').select('id,user_id,coins,amount_usd,status').order('id',{ascending:false}).limit(20),
+      supabase.from('genesis_coin_transactions').select('id',{count:'exact',head:true})
+    ]);
+    const error=wallets.error||orders.error||transactions.error;
+    if(error){
+      console.error('Admin panel error:',error.message);
+      $('adminMessage').textContent='تعذر تحميل البيانات. تأكد من إضافة سياسات RLS الخاصة بالإدارة في Supabase.';
+      $('adminWalletCount').textContent='—';$('adminOrderCount').textContent='—';$('adminTransactionCount').textContent='—';
+      $('adminOrdersBody').innerHTML='<tr><td colspan="5">تعذر تحميل البيانات.</td></tr>';return;
+    }
+    $('adminWalletCount').textContent=wallets.count??0;
+    $('adminOrderCount').textContent=orders.data?.length??0;
+    $('adminTransactionCount').textContent=transactions.count??0;
+    const esc=v=>String(v??'—').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    $('adminOrdersBody').innerHTML=(orders.data||[]).map(o=>`<tr><td>${esc(o.id)}</td><td>${esc(o.user_id)}</td><td>${esc(o.coins)}</td><td>${esc(o.amount_usd)}</td><td><span class="admin-status">${esc(o.status)}</span></td></tr>`).join('')||'<tr><td colspan="5">ما كاين حتى طلب حالياً.</td></tr>';
+    $('adminMessage').textContent='تم تحميل البيانات. هاد النسخة للعرض فقط؛ تعديل الرصيد والطلبات خاصو وظائف آمنة فالخادم.';
+  }
+  $('adminOpen').addEventListener('click',()=>{$('adminPanel').classList.toggle('hidden');if(!$('adminPanel').classList.contains('hidden'))refreshAdminPanel();});
+  $('adminRefresh').addEventListener('click',()=>refreshAdminPanel());
+
   function openAuth(mode='login'){setAuthMode(mode);$('authMessage').textContent='';backdrop.classList.add('open')}
   function closeAuth(){backdrop.classList.remove('open')}
   function setAuthMode(mode){authMode=mode;const signup=mode==='signup';$('authTitle').textContent=signup?'إنشاء حساب':'تسجيل الدخول';$('authIntro').textContent='سجّل الدخول أو أنشئ حسابك الحقيقي في GENESIS RP.';$('usernameField').classList.toggle('hidden',!signup);$('loginTab').classList.toggle('active',!signup);$('signupTab').classList.toggle('active',signup);$('submitAuth').textContent=signup?'إنشاء حساب':'تسجيل الدخول';$('authMessage').textContent=''}
@@ -75,6 +135,8 @@
   backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeAuth()});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeAuth();$('cartDrawer').classList.remove('open')}});
   async function refreshGenesisWallet(user){
+    currentGenesisUser=user||null;
+    refreshAdminPanel(currentGenesisUser);
     const panel=$('walletPanel');
     const playerPanel=$('playerPanel');
     if(!user){
